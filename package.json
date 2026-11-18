@@ -1,0 +1,59 @@
+{
+	"name": "n8n-nodes-qravate",
+	"version": "0.1.0",
+	"description": "n8n nodes for QRavate dynamic QR codes: create QR codes, change their destination, pause them, read scan stats and react to events.",
+	"license": "MIT",
+	"homepage": "https://github.com/QRavate/n8n-nodes-qravate#readme",
+	"keywords": [
+		"n8n-community-node-package",
+		"n8n",
+		"qravate",
+		"qr-code",
+		"dynamic-qr-code"
+	],
+	"author": {
+		"name": "QRavate",
+		"email": "support@qravate.com",
+		"url": "https://www.qravate.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/QRavate/n8n-nodes-qravate.git"
+	},
+	"bugs": {
+		"url": "https://github.com/QRavate/n8n-nodes-qravate/issues"
+	},
+	"scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
+	},
+	"files": [
+		"dist"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"strict": true,
+		"credentials": [
+			"dist/credentials/QravateApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/Qravate/Qravate.node.js",
+			"dist/nodes/QravateTrigger/QravateTrigger.node.js"
+		]
+	},
+	"devDependencies": {
+		"@n8n/node-cli": "0.57.4",
+		"eslint": "9.32.0",
+		"prettier": "3.6.2",
+		"release-it": "^21.1.0",
+		"typescript": "5.9.2"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}
